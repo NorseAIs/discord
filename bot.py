@@ -47,4 +47,7 @@ async def on_message_edit(before: discord.Message, after: discord.Message):
     )
 
 TOKEN = os.getenv("DISCORD_TOKEN")
+# temporary debug:
+print("TOKEN from env:", repr(TOKEN))
+
 bot.run(TOKEN)
