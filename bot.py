@@ -46,6 +46,15 @@ async def on_message_edit(before: discord.Message, after: discord.Message):
         f"**After:**  {after.content}"
     )
 
+@bot.event
+async def on_member_join(member):
+    log_channel = get_log_channel(member.guild)
+    if not log_channel:
+        return
+    await log_channel.send(f"👋 {member} joined the server.")
+
+
 TOKEN = os.getenv("DISCORD_TOKEN")
 bot.run(TOKEN)
+
 
